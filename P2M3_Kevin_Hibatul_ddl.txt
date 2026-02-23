@@ -1,0 +1,46 @@
+Dataset URL
+
+Dataset yang digunakan pada Milestone 3 berasal dari Kaggle:
+
+Supermart Grocery Sales Dataset
+https://www.kaggle.com/datasets/vivek468/supermart-grocery-sales
+
+Dataset ini berisi data transaksi penjualan supermarket yang mencakup informasi order, 
+kategori produk, region, sales, profit, dan discount.
+
+Syntax DDL (Data Definition Language)
+
+CREATE TABLE table_m3 (
+    "Order ID" TEXT,
+    "Customer Name" TEXT,
+    "Category" TEXT,
+    "Sub Category" TEXT,
+    "City" TEXT,
+    "Order Date" DATE,
+    "Region" TEXT,
+    "Sales" NUMERIC,
+    "Discount" NUMERIC,
+    "Profit" NUMERIC,
+    "State" TEXT
+);
+
+Syntax DML (Data Manipulation Language)
+
+COPY table_m3 (
+    "Order ID",
+    "Customer Name",
+    "Category",
+    "Sub Category",
+    "City",
+    "Order Date",
+    "Region",
+    "Sales",
+    "Discount",
+    "Profit",
+    "State"
+)
+FROM '/data/supermart_grocery_sales.csv'
+DELIMITER ','
+CSV HEADER;
+
+
